@@ -2,9 +2,8 @@
     flex: 1 1 auto;
 }
 
-.toolbar{
-    position: fixed;
-    clear: both;
+/*.toolbar{
+    position: absolute;
     left: 0;
     top: 0;
-}
+}*/
