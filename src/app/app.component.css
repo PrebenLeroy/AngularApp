@@ -1,3 +1,22 @@
 .example-spacer{
     flex: 1 1 auto;
 }
+
+header{
+    position: fixed;
+    width: 100%;
+    background-color: brown;
+    top:0;
+    left: 0;
+}
+
+.toolbar{
+    width: 100%;
+    background-color: brown;
+}
+
+.headerImg{
+    position: block;
+    width: 100%;
+    max-height: 240px;
+}
