@@ -1,0 +1,14 @@
+<header>
+    <img class="headerImg" src="assets/images/download.jpg"/>
+    <mat-toolbar color="primary" class="toolbar">
+      <span>Player-Rater</span>
+      <span class="example-spacer"></span>
+      <button mat-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>menu</mat-icon></button>
+    </mat-toolbar>
+  
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item>Help</button>
+    </mat-menu>
+  </header>

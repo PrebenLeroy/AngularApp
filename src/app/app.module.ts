@@ -9,12 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { PlayerComponent } from './player/player.component';
 import { TeamComponent } from './team/team.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayerComponent,
-    TeamComponent
+    TeamComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
