@@ -5,12 +5,12 @@
 header{
     position: static;
     width: 100%;
-    background-color: brown;
+    background-color: #03c03c;
 }
 
 .toolbar{
     width: 100%;
-    background-color: brown;
+    background-color: #03c03c;
 }
 
 .headerImg{

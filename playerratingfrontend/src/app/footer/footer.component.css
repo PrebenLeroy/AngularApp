@@ -1,10 +1,10 @@
 .footer{
-    background-color: brown;
+    background-color: #03c03c;
     text-align: center;
     bottom: 0;
-    font-size: 20px;
+    font-size: 10px;
     color: white;
     position: absolute;
     width: 100%;
-    left:0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
