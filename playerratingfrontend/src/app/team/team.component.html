@@ -1,3 +1,6 @@
 <mat-card>
-  <app-player></app-player>
+  <h2>{{team.name}}</h2>
+  <h4>Coach: {{team.coach}}</h4>
+  <h5>Assistant coach: {{team.assistantcoach}}</h5>
 </mat-card>
+<app-player *ngFor = 'let player of team.players' [player]='player'></app-player>

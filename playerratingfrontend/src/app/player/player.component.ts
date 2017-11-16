@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Player } from '../models/player.model';
+
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-player',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
+
+  @Input() player: Player;
 
   constructor() { }
 
