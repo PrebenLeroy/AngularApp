@@ -1,2 +1,2 @@
-export class Team.Model {
+export class Team {
 }
