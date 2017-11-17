@@ -6,4 +6,6 @@
     <h5>Assistant coach: {{team.assistantcoach}}</h5>
   </div>
 </mat-card>
-<app-player *ngFor='let player of team.players' [player]='player'></app-player>
+<div class="players">
+  <app-player *ngFor='let player of team.players' [player]='player'></app-player>
+</div>

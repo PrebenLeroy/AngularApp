@@ -1,5 +1,5 @@
 mat-card{
-    margin: 10px 10px;
+    margin: 5px;
     align-content: center;
 }
 
@@ -9,4 +9,8 @@ mat-card{
 
 .teamInfo{
     display: inline-block;
+}
+
+.players{
+    margin: 0 auto;
 }
