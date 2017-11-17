@@ -1,11 +1,9 @@
 <div class="players">
     <mat-card>
         <img id="player" src={{player.picturePath}} alt={{player.lastname}}/>
-        <div class="playerInfo">
-            <h5>FIRSTNAME: {{player.firstname}}</h5>
-            <h5>LASTNAME: {{player.lastname}}</h5>
-            <h6>POSITION: {{player.positionString}}</h6>
-            <h6>NUMBER: {{player.playernumber}}</h6>
-        </div>
+        <h3>{{player.firstname}} {{player.lastname}}</h3>
+        <button mat-raised-button (click)="showDialog(player)">Profile</button>
+        <!--<h6>POSITION: {{player.positionString}}</h6>
+            <h6>NUMBER: {{player.playernumber}}</h6>-->
     </mat-card>
 </div>

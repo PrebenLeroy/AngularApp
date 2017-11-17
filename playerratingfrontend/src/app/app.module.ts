@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, 
+  MatListModule, MatDialogModule } from '@angular/material';
 import { PlayerComponent } from './player/player.component';
 import { TeamComponent } from './team/team.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { PlayerProfileComponent } from './player-profile/player-profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
     PlayerComponent,
     TeamComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PlayerProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +33,11 @@ import { FooterComponent } from './footer/footer.component';
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PlayerProfileComponent]
 })
 export class AppModule { }

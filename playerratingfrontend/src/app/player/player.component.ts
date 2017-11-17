@@ -1,7 +1,9 @@
 import { Player } from '../models/player.model';
 import { Team } from '../models/team.model';
+import { PlayerProfileComponent } from '../player-profile/player-profile.component';
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-player',
@@ -12,9 +14,20 @@ export class PlayerComponent implements OnInit {
 
   @Input() player: Player;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  showDialog(): void {
+
+    const playerdialog = this.dialog.open(PlayerProfileComponent, {
+      width: '500px'
+    });
+
+    playerdialog.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }
