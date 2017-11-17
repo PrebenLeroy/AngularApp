@@ -1,6 +1,9 @@
 <mat-card>
-  <h2>{{team.name}}</h2>
-  <h4>Coach: {{team.coach}}</h4>
-  <h5>Assistant coach: {{team.assistantcoach}}</h5>
+  <img id="okapi" src="../../assets/images/okapi-logo.png" alt="TeamLogo" />
+  <div class="teamInfo">
+    <h2>{{team.name}}</h2>
+    <h4>Coach: {{team.coach}}</h4>
+    <h5>Assistant coach: {{team.assistantcoach}}</h5>
+  </div>
 </mat-card>
-<app-player *ngFor = 'let player of team.players' [player]='player'></app-player>
+<app-player *ngFor='let player of team.players' [player]='player'></app-player>

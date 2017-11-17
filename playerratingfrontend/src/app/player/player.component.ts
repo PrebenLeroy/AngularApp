@@ -1,4 +1,5 @@
 import { Player } from '../models/player.model';
+import { Team } from '../models/team.model';
 
 import { Component, OnInit, Input } from '@angular/core';
 

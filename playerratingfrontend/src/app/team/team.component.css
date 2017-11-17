@@ -1,5 +1,12 @@
 mat-card{
-    width: 50%;
     margin: 10px 10px;
     align-content: center;
+}
+
+#okapi{
+    display: inline-block;
+}
+
+.teamInfo{
+    display: inline-block;
 }
