@@ -2,16 +2,26 @@ import { Player } from './player.model';
 
 export class Team {
 
+    private _logoPath: String;
     private _name: String;
     private _players: Player[];
     private _coach: String;
     private _assistantcoach: String;
 
-    constructor(name: String, players: Player[], coach: String, assistantcoach: String){
+    constructor(logoPath: String, name: String, players: Player[], coach: String, assistantcoach: String){
+        this._logoPath = logoPath;
         this._name = name;
         this._players = players;
         this._coach = coach;
         this._assistantcoach = assistantcoach;
+    }
+
+    get logoPath(){
+        return this._logoPath;
+    }
+
+    set logoPath(logoPath: String){
+        this._logoPath = logoPath;
     }
 
     get name(){

@@ -2,3 +2,14 @@ mat-card{
     margin: 10px 10px;
     align-content: center;
 }
+
+#player{
+    height: 5%;
+    width: 5%;
+    display: inline-block;
+}
+
+.playerInfo{
+    display: inline-block;
+    padding: 10px;
+}
