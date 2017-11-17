@@ -19,11 +19,13 @@ export class PlayerComponent implements OnInit {
   ngOnInit() {
   }
 
-  showDialog(): void {
+  showDialog(player: Player): void {
 
     const playerdialog = this.dialog.open(PlayerProfileComponent, {
       width: '500px'
     });
+
+    playerdialog.componentInstance.player = player;
 
     playerdialog.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

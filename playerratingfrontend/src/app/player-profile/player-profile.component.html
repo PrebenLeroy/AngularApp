@@ -1,13 +1,15 @@
-<h3>Player Profile</h3>
+<mat-card>
+<h2>Player Profile</h2>
 <img id="player" src={{player.picturePath}} alt={{player.lastname}}/>
 <div class="playerInfo">
-  <h5>FIRSTNAME: {{player.firstname}}</h5>
-  <h5>LASTNAME: {{player.lastname}}</h5>
-  <h6>POSITION: {{player.positionString}}</h6>
-  <h6>NUMBER: {{player.playernumber}}</h6>
+  <h3>Firstname: {{player.firstname}}</h3>
+  <h3>Lastname: {{player.lastname}}</h3>
+  <h4>Number: {{player.playernumber}}</h4>
+  <h5>Position: {{player.positionString}}</h5>
 </div>
 <div>
   <button mat-raised-button>Close</button>
   <button mat-raised-button>Rate</button>
   <button mat-raised-button>Comment</button>
 </div>
+</mat-card>
