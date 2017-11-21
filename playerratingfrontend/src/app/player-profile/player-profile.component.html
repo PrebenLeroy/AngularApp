@@ -7,9 +7,9 @@
   <h4>Number: {{player.playernumber}}</h4>
   <h5>Position: {{player.positionString}}</h5>
 </div>
-<div>
-  <button mat-raised-button>Close</button>
-  <button mat-raised-button>Rate</button>
-  <button mat-raised-button>Comment</button>
-</div>
 </mat-card>
+<div class="buttons">
+  <button mat-raised-button color="warn" (click)="closeDialog()">Close</button>
+  <button mat-raised-button color="primary">Rate</button>
+  <button mat-raised-button color="accent">Comment</button>
+</div>
