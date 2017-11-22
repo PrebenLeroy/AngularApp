@@ -13,7 +13,6 @@ import { TeamComponent } from './team/team.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PlayerRatingComponent } from './player-rating/player-rating.component';
 
 @NgModule({
@@ -24,7 +23,6 @@ import { PlayerRatingComponent } from './player-rating/player-rating.component';
     HeaderComponent,
     FooterComponent,
     PlayerProfileComponent,
-    PageNotFoundComponent,
     PlayerRatingComponent
   ],
   imports: [
