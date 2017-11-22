@@ -16,6 +16,7 @@ import { PlayerProfileComponent } from './player-profile/player-profile.componen
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PlayerRatingComponent } from './player-rating/player-rating.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PlayerRatingComponent } from './player-rating/player-rating.component';
     PlayerProfileComponent,
     LoginComponent,
     PageNotFoundComponent,
-    PlayerRatingComponent
+    PlayerRatingComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
