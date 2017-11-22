@@ -13,6 +13,9 @@ import { TeamComponent } from './team/team.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
+import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PlayerRatingComponent } from './player-rating/player-rating.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { PlayerProfileComponent } from './player-profile/player-profile.componen
     TeamComponent,
     HeaderComponent,
     FooterComponent,
-    PlayerProfileComponent
+    PlayerProfileComponent,
+    LoginComponent,
+    PageNotFoundComponent,
+    PlayerRatingComponent
   ],
   imports: [
     BrowserModule,
