@@ -1,6 +1,6 @@
-import { Team } from '../models/team.model';
-import { Player } from '../models/player.model';
-import { Position } from '../models/position.model';
+import { Team } from '../../models/team.model';
+import { Player } from '../../models/player.model';
+import { Position } from '../../models/position.model';
 
 import { Component, OnInit } from '@angular/core';
 

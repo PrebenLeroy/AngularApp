@@ -1,0 +1,44 @@
+<mat-card>
+  <h3>Rate</h3>
+
+  <h4>Player to rate: {{player.firstname}} {{player.lastname}}</h4>
+
+  <form class="form-container">
+
+    <mat-input-container>
+      <input matInput type="number" placeholder="Overall Score" min="0" max="5" step="0.5">
+    </mat-input-container>
+
+    <mat-input-container>
+      <input matInput type="number" placeholder="Freethrow Value" min="0" max="5" step="0.5">
+    </mat-input-container>
+
+    <mat-input-container>
+      <input matInput type="number" placeholder="Rebound Value" min="0" max="5" step="0.5">
+    </mat-input-container>
+
+    <mat-input-container>
+      <input matInput type="number" placeholder="Blocks Value" min="0" max="5" step="0.5">
+    </mat-input-container>
+
+    <mat-input-container>
+      <input matInput type="number" placeholder="Assist Value" min="0" max="5" step="0.5">
+    </mat-input-container>
+
+    <mat-input-container>
+      <input matInput type="number" placeholder="Steal Value" min="0" max="5" step="0.5">
+    </mat-input-container>
+
+    <mat-input-container>
+      <textarea matInput placeholder="Add your comment to the player"></textarea>
+    </mat-input-container>
+
+
+  </form>
+
+  <div class="checkMargin">
+    <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="closeDialog()">Rate</button>
+  </div>
+
+</mat-card>

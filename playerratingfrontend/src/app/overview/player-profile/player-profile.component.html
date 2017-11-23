@@ -7,8 +7,8 @@
   <h4>Number: {{player.playernumber}}</h4>
   <h5>Position: {{player.positionString}}</h5>
 </div>
-</mat-card>
 <div class="buttons">
-  <button mat-raised-button color="warn" (click)="closeDialog()">Close</button>
-  <button mat-raised-button color="primary">Rate</button>
+  <button mat-raised-button color="warn" routerlinkActive="active" routerLink="">Back</button>
+  <button mat-raised-button color="primary" (click)="openDialog(player)">Rate</button>
 </div>
+</mat-card>
