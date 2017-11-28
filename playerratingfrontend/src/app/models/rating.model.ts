@@ -5,7 +5,7 @@ export class Rating {
     private _player: Player;
 
     private _overallIndex: Number;
-    private _scoretIndex: Number;
+    private _scoreIndex: Number;
     private _freethrowIndex: Number;
     private _reboundtIndex: Number;
     private _blockIndex: Number;
@@ -19,7 +19,7 @@ export class Rating {
         this._player = player;
 
         this._overallIndex = overallIndex;
-        this._scoretIndex = scoreIndex;
+        this._scoreIndex = scoreIndex;
         this._freethrowIndex = freethrowIndex;
         this._reboundtIndex = reboundIndex;
         this._blockIndex = blockIndex;
@@ -45,12 +45,12 @@ export class Rating {
         this._overallIndex = overallIndex;
     }
 
-    get scoretIndex() {
-        return this._scoretIndex;
+    get scoreIndex() {
+        return this._scoreIndex;
     }
 
-    set scoretIndex(scoretIndex: Number) {
-        this._scoretIndex = scoretIndex;
+    set scoreIndex(scoreIndex: Number) {
+        this._scoreIndex = scoreIndex;
     }
 
     get freethrowIndex() {
