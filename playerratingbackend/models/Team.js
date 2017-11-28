@@ -1,6 +1,7 @@
 let mongoose = require('mongoose');
 
 let TeamSchema = new mongoose.Schema({
+    picturePath: String,
     name: String,
     players: [{
         type: mongoose.Schema.Types.ObjectId,
