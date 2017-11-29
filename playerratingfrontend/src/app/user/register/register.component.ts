@@ -1,20 +1,3 @@
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
-})
-export class RegisterComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-
-/*
 import { Observable } from 'rxjs/Rx';
 import { AuthenticationService } from '../authentication.service';
 import { Component, OnInit } from '@angular/core';
@@ -75,8 +58,8 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.authenticationService.register(this.user.value.username, this.passwordControl.value).subscribe(val => {
       if (val) {
-        this.router.navigate(['/recipe/list']);
+        this.router.navigate(['']);
       }
     });
   }
-}*/
+}
