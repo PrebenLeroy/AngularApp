@@ -7,3 +7,5 @@ let PlayerSchema = new mongoose.Schema({
     lastname: String,
     position: Number
 });
+
+mongoose.model('Player', PlayerSchema);

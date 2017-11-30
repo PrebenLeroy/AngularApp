@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 let mongoose = require('mongoose');
 let passport = require('passport');
-let User = monngoose.model('User');
+let User = mongoose.model('User');
 
 router.post('/register', function(req, res, next){
   if(!req.body.username || !req.body.password){

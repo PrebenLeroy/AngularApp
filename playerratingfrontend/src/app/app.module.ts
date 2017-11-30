@@ -5,10 +5,10 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule,
   MatListModule, MatDialogModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
 import { PlayerComponent } from './overview/player/player.component';
 import { TeamComponent } from './overview/team/team.component';
 import { HeaderComponent } from './header/header.component';
