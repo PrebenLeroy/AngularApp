@@ -3,8 +3,12 @@ mat-card{
     align-content: center;
 }
 
-p{
+.subtitle{
     text-align: center;
+}
+
+mat-list{
+    width: 50%;
 }
 
 #okapi{
@@ -13,5 +17,11 @@ p{
 }
 
 .ranked{
-    width: 44.5%;
+    display: inline-block;
+    width: 45%;
+}
+
+.scored{
+    display: inline-block;
+    width: 45%;
 }
