@@ -1,3 +1,4 @@
+import { UserModule } from './overview/user/user.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +18,8 @@ import { PlayerProfileComponent } from './overview/player-profile/player-profile
 import { PlayerRatingComponent } from './overview/player-rating/player-rating.component';
 import { HomeComponent } from './overview/home/home.component';
 import { PageNotFoundComponent } from './overview/page-not-found/page-not-found.component';
+
+import { TeamModule } from './overview/team/team.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { PageNotFoundComponent } from './overview/page-not-found/page-not-found.
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    UserModule,
+    TeamModule,
     AppRoutingModule
   ],
   providers: [],

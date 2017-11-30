@@ -1,14 +1,14 @@
-<form [formGroup]='user' (ngSubmit)='onSubmit()'>
-  <h3 class="ui header">login</h3>
-  <div class="field">
-    <label for="username">username:</label>
-    <input type="text" id="username" formControlName='username'>
-  </div>
-  <div class="field">
-    <label for="password">password:</label>
-    <input type="password" id="password" formControlName='password'>
-  </div>
-  <button type='submit' [disabled]='!user.valid'>log in</button>
-  <div *ngIf='errorMsg'>{{errorMsg}}</div>
-</form>
-<a class='item' routerLink="/register" >register</a>
+<mat-card>
+  <form class="form-container" [formGroup]='user' (ngSubmit)='onSubmit()'>
+    <h3>Login</h3>
+    <mat-input-container>
+      <input matInput type="text" placeholder="Username" id="username" formControlName='username'>
+    </mat-input-container>
+    <mat-input-container>
+      <input matInput type="password" id="password" placeholder="Password" formControlName='password'>
+    </mat-input-container>
+      <button mat-raised-button color="primary" type='submit' [disabled]='!user.valid'>log in</button>
+      <div *ngIf='errorMsg'>{{errorMsg}}</div>
+      <button mat-raised-button color="warn" routerLink="/register">Register</button>
+  </form>
+</mat-card>

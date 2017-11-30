@@ -5,9 +5,14 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './authentication.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
+
+import {
+  MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule,
+  MatListModule, MatDialogModule, MatFormFieldModule, MatInputModule
+} from '@angular/material';
 
 const routes = [
   { path: 'login', component: LoginComponent },
@@ -20,12 +25,13 @@ const routes = [
     CommonModule,
     HttpModule,
     ReactiveFormsModule,
+    MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule,
+    MatListModule, MatDialogModule, MatFormFieldModule, MatInputModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
     LoginComponent,
     RegisterComponent,
-    LogoutComponent,
     LogoutComponent
   ],
   providers: [

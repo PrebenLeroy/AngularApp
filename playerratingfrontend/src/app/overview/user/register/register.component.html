@@ -1,8 +1,9 @@
-<form [formGroup]='user' (ngSubmit)='onSubmit()'>
-  <h3>register new user</h3>
-  <div>
-    <label for="username">username:</label>
-    <input type="text" id="username" formControlName='username'>
+<mat-card>
+  <form class="form-container" [formGroup]='user' (ngSubmit)='onSubmit()'>
+    <h3>Register new user</h3>
+    <mat-input-container>
+      <input matInput type="text" id="username" placeholder="Username" formControlName='username'>
+    </mat-input-container>
     <div *ngIf=' user.get("username").errors?.required && user.get("username").touched'>
       a username is required
     </div>
@@ -12,22 +13,21 @@
     <div *ngIf='user.get("username").errors?.userAlreadyExists && user.get("username").touched'>
       a user with that name already exists
     </div>
-  </div>
-  <div formGroupName='passwordGroup'>
-    <div>
-      <label for="password">password:</label>
-      <input type="password" id="password" formControlName='password'>
+    <div formGroupName='passwordGroup'>
+      <mat-input-container>
+        <input matInput type="password" id="password" placeholder="Password" formControlName='password'>
+      </mat-input-container>
       <div *ngIf=' passwordControl.errors?.passwordTooShort && passwordControl.touched'>
         password too short, please use at least {{passwordControl.errors?.passwordTooShort.requiredLength}} letters (got {{passwordControl.errors?.passwordTooShort.actualLength}})
       </div>
+      <mat-input-container>
+        <input matInput type="password" id="confirmpassword" placeholder="Confirm password" formControlName='confirmPassword'>
+      </mat-input-container>
+      <div *ngIf=' user.get("passwordGroup").errors?.passwordsDiffer && user.get("passwordGroup").get("confirmPassword").touched  && user.get("passwordGroup").get("password").touched'>
+        the two passwords should be the same
+      </div>
     </div>
-    <div>
-      <label for="confirmpassword">confirm password:</label>
-      <input type="password" id="confirmpassword" formControlName='confirmPassword'>
-    </div>
-    <div *ngIf=' user.get("passwordGroup").errors?.passwordsDiffer && user.get("passwordGroup").get("confirmPassword").touched  && user.get("passwordGroup").get("password").touched'>
-     the two passwords should be the same
-    </div>
-  </div>
-  <button type='submit' [disabled]='!user.valid'>register</button>
-</form>
+    <button mat-raised-button color="primary" type='submit' [disabled]='!user.valid'>register</button>
+    <button mat-raised-button color="warn" (click)="back()">Back to Login</button>
+  </form>
+</mat-card>

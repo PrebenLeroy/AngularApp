@@ -19,12 +19,12 @@ import { AuthGuardService } from '../overview/user/auth-guard.service';
 import { AuthenticationService } from '../overview/user/authentication.service';
 
 const appRoutes: Routes = [
+  { path: '', canActivate: [AuthGuardService], component: HomeComponent, pathMatch: 'full' },
   {
     path: 'team',
     canActivate: [AuthGuardService],
     loadChildren: '../overview/team/team.module#TeamModule'
   },
-  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -43,19 +43,13 @@ const appRoutes: Routes = [
     CommonModule
   ],
   declarations: [
-    /*TeamComponent,
-    PlayerComponent,*/
     HomeComponent,
     PageNotFoundComponent,
-    /*PlayerProfileComponent,*/
     PlayerRatingComponent,
   ],
   exports: [
     RouterModule
   ],
-  providers: [
-    AuthGuardService,
-    AuthenticationService
-  ]
+  providers: []
 })
 export class AppRoutingModule { }

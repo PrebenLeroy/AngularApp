@@ -3,8 +3,7 @@ import { AuthenticationService } from '../authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators, FormControl } from '@angular/forms';
-
-
+import { Location } from '@angular/common';
 
 function passwordValidator(length: number): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } => {
@@ -18,12 +17,10 @@ function comparePasswords(control: AbstractControl): { [key: string]: any } {
   return password.value === confirmPassword.value ? null : { 'passwordsDiffer': true };
 }
 
-
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
   public user: FormGroup;
@@ -32,7 +29,8 @@ export class RegisterComponent implements OnInit {
     return <FormControl>this.user.get('passwordGroup').get('password');
   }
 
-  constructor(private authenticationService: AuthenticationService, private router: Router, private fb: FormBuilder) { }
+  constructor(private authenticationService: AuthenticationService, private router: Router,
+    private fb: FormBuilder, private _location: Location) { }
 
   ngOnInit() {
     this.user = this.fb.group({
@@ -61,5 +59,9 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['']);
       }
     });
+  }
+
+  back() {
+    this._location.back();
   }
 }
