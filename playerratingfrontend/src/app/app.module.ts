@@ -15,20 +15,14 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PlayerProfileComponent } from './overview/player-profile/player-profile.component';
 import { PlayerRatingComponent } from './overview/player-rating/player-rating.component';
-import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './overview/home/home.component';
+import { PageNotFoundComponent } from './overview/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerComponent,
-    TeamComponent,
     HeaderComponent,
     FooterComponent,
-    PlayerProfileComponent,
-    PlayerRatingComponent,
-    HomeComponent,
-    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

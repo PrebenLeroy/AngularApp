@@ -7,5 +7,7 @@
   </div>
 </mat-card>
 <div class="players">
-  <app-player *ngFor='let player of team.players' [player]='player'></app-player>
+  <div *ngFor='let player of team.players'>
+      <app-player  [player]='player'></app-player>
+  </div>
 </div>
