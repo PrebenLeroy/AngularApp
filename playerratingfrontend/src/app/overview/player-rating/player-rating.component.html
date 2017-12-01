@@ -1,9 +1,9 @@
 <mat-card>
-  <h3>Rate</h3>
-
-  <h4>Player to rate: {{player.firstname}} {{player.lastname}}</h4>
-
   <form class="form-container">
+
+    <h3>Rate</h3>
+
+    <h4>Player to rate: {{player.firstname}} {{player.lastname}}</h4>
 
     <mat-input-container>
       <input matInput type="number" placeholder="Overall Score" min="0" max="5" step="0.5">
@@ -33,12 +33,10 @@
       <textarea matInput placeholder="Add your comment to the player"></textarea>
     </mat-input-container>
 
-
   </form>
 
   <div class="checkMargin">
     <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
     <button mat-raised-button color="primary" (click)="closeDialog()">Rate</button>
   </div>
-
 </mat-card>

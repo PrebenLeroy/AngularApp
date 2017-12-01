@@ -1,7 +1,7 @@
 # PlayerRatingSystem
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.
-You will find the website on: https://prebenleroy.github.io/AngularApp/
+You will find the website on: https://quiet-everglades-90749.herokuapp.com.
 
 ## Development server
 
