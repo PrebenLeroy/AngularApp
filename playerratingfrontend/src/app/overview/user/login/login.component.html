@@ -7,7 +7,7 @@
     <mat-input-container>
       <input matInput type="password" id="password" placeholder="Password" formControlName='password'>
     </mat-input-container>
-      <button mat-raised-button color="primary" type='submit' [disabled]='!user.valid'>log in</button>
+      <button mat-raised-button color="primary" type='submit' [disabled]='!user.valid'>Login</button>
       <div *ngIf='errorMsg'>{{errorMsg}}</div>
       <button mat-raised-button color="warn" routerLink="/register">Register</button>
   </form>
