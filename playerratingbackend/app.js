@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let passport = require('passport');
 
-mongoose.connect('mongodb://localhost/playerratingdb', { useMongoClient: true });
+mongoose.connect(process.env.PLAYERRATING_DATABASE, { useMongoClient: true });
 
 require('./models/User');
 require('./models/Player');
