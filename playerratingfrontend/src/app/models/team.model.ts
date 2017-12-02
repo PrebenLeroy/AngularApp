@@ -16,6 +16,11 @@ export class Team {
         this._assistantcoach = assistantcoach;
     }
 
+    static fromJSON(json): Team {
+        const team = new Team(json.logoPath, json.name, json.players, json.coach, json.assistentcoach);
+        return team;
+    }
+
     get logoPath(){
         return this._logoPath;
     }

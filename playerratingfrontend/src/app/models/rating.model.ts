@@ -2,7 +2,7 @@ import { Player } from './player.model';
 
 export class Rating {
 
-    private _player: Player;
+    private _id: String;
 
     private _overallIndex: Number;
     private _scoreIndex: Number;
@@ -14,10 +14,8 @@ export class Rating {
 
     private _comment: String;
 
-    constructor(player: Player, overallIndex: Number, scoreIndex: Number, freethrowIndex: Number,
+    constructor(overallIndex: Number, scoreIndex: Number, freethrowIndex: Number,
                 reboundIndex: Number, blockIndex: Number, assistIndex: Number, stealIndex: Number, comment?: String) {
-        this._player = player;
-
         this._overallIndex = overallIndex;
         this._scoreIndex = scoreIndex;
         this._freethrowIndex = freethrowIndex;
@@ -29,13 +27,14 @@ export class Rating {
         this._comment = comment;
     }
 
-    get player() {
-        return this._player;
+    static fromJSON(json): Rating {
+        const rating = new Rating(json.overallIndex, json.scoreIndex, json.freethrowIndex, 
+            json.reboundIndex, json.blockIndex, json.assistIndex, json.stealIndex);
+        rating._comment = json.comment;
+        rating._id = json._id;
+        return rating;
     }
 
-    set player(player: Player) {
-        this._player = player;
-    }
 
     get overallIndex() {
         return this._overallIndex;

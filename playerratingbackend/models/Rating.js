@@ -1,9 +1,9 @@
 let mongoose = require('mongoose');
 
 let RatingSchema = new mongoose.Schema({
-    player: {
+    user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Player'
+        ref: 'User'
     },
     overallIndex: Number,
     scoreIndex: Number,
