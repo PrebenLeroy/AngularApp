@@ -6,10 +6,10 @@ let PlayerSchema = new mongoose.Schema({
     firstname: String,
     lastname: String,
     position: Number,
-    rating: {
+    ratings: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Rating'
-    },
+    }],
 });
 
 mongoose.model('Player', PlayerSchema);
