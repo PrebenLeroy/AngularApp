@@ -4,6 +4,7 @@ export class Rating {
 
     private _id: String;
 
+    private _user: String;
     private _overallIndex: Number;
     private _scoreIndex: Number;
     private _freethrowIndex: Number;
@@ -14,8 +15,9 @@ export class Rating {
 
     private _comment: String;
 
-    constructor(overallIndex: Number, scoreIndex: Number, freethrowIndex: Number,
+    constructor(user: String, overallIndex: Number, scoreIndex: Number, freethrowIndex: Number,
                 reboundIndex: Number, blockIndex: Number, assistIndex: Number, stealIndex: Number, comment?: String) {
+        this._user = user;
         this._overallIndex = overallIndex;
         this._scoreIndex = scoreIndex;
         this._freethrowIndex = freethrowIndex;
@@ -28,13 +30,20 @@ export class Rating {
     }
 
     static fromJSON(json): Rating {
-        const rating = new Rating(json.overallIndex, json.scoreIndex, json.freethrowIndex,
+        const rating = new Rating(json.user, json.overallIndex, json.scoreIndex, json.freethrowIndex,
             json.reboundIndex, json.blockIndex, json.assistIndex, json.stealIndex);
         rating._comment = json.comment;
         rating._id = json._id;
         return rating;
     }
 
+    get user(){
+        return this._user;
+    }
+
+    set user(user: String){
+        this._user = user;
+    }
 
     get overallIndex() {
         return this._overallIndex;
