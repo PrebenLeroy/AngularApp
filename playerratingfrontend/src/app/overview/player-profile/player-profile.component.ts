@@ -5,6 +5,7 @@ import { PlayerRatingComponent } from '../player-rating/player-rating.component'
 
 import { MatDialog } from '@angular/material';
 import { TeamDataService } from '../../services/team-data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-player-profile',
@@ -14,13 +15,16 @@ import { TeamDataService } from '../../services/team-data.service';
 })
 export class PlayerProfileComponent implements OnInit {
 
-  constructor(private teamDataService: TeamDataService, public dialog: MatDialog) {
+  player: Player;
+
+  constructor(private teamDataService: TeamDataService, public dialog: MatDialog, private _route: ActivatedRoute) {
   }
 
-  @Input() public value: Player;
-
   ngOnInit() {
-    console.log(this.value);
+    this._route.data.subscribe(item => {
+      this.player = item['player'];
+      console.log(this.player);
+    });
   }
 
   openDialog(player: Player) {

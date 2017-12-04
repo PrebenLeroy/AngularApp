@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { TeamModule } from './overview/team/team.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -18,8 +19,6 @@ import { PlayerProfileComponent } from './overview/player-profile/player-profile
 import { PlayerRatingComponent } from './overview/player-rating/player-rating.component';
 import { HomeComponent } from './overview/home/home.component';
 import { PageNotFoundComponent } from './overview/page-not-found/page-not-found.component';
-
-import { TeamModule } from './overview/team/team.module';
 
 @NgModule({
   declarations: [

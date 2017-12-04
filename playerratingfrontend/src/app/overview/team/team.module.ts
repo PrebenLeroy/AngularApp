@@ -13,10 +13,12 @@ import { AuthGuardService } from '../user/auth-guard.service';
 
 import { PlayerComponent } from '../player/player.component';
 import { PlayerProfileComponent } from '../player-profile/player-profile.component';
+import { PlayerResolverService } from '../../services/player-resolver.service';
+import { TeamDataService } from '../../services/team-data.service';
 
 const routes = [
     { path: 'team', canActivate: [AuthGuardService], component: TeamComponent },
-    { path: 'profile/:id', canActivate: [AuthGuardService], component: PlayerProfileComponent },
+    { path: 'profile/:id', canActivate: [AuthGuardService], component: PlayerProfileComponent, resolve: { player: PlayerResolverService}},
 ];
 
 @NgModule({
@@ -40,6 +42,7 @@ const routes = [
         MatInputModule,
         RouterModule.forChild(routes)
     ],
-    providers: [],
+    providers: [PlayerResolverService,
+        TeamDataService],
 })
 export class TeamModule { }

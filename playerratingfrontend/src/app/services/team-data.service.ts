@@ -13,6 +13,7 @@ export class TeamDataService {
 
   private _appUrl = 'http://localhost:4200/API';
   private _teams;
+  private _players;
 
   constructor(private http: Http, private auth: AuthenticationService) { }
 
@@ -31,9 +32,9 @@ export class TeamDataService {
       .map(response => response.json().map(player => Player.fromJSON(player)));
   }
 
-  getPlayer(id): Observable<Player> {
-    return this.http.get(`${this._appUrl}/players/${id}`)
-      .map(response => response.json().map(player => Player.fromJSON(player)));
+  getPlayer(id: String): Observable<Player> {
+    return this.http.get(`${this._appUrl}/player/${id}`, { headers: new Headers({ Authorization: `Bearer ${this.auth.token}` }) })
+      .map(response => response.json()).map(player => Player.fromJSON(player));
   }
 
 }

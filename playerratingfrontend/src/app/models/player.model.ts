@@ -21,7 +21,7 @@ export class Player {
     }
 
     static fromJSON(json): Player {
-        const player = new Player(json.picturePath, json.playernumber, json.firstname, json.lastname, json.position);
+        const player = new Player(json.picturePath, json.playerNumber, json.firstname, json.lastname, json.position);
         player._id = json._id;
         /*player._ratings = json.routes.map(Rating.fromJSON);*/
         return player;
