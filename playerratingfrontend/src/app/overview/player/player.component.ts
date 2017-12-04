@@ -1,3 +1,4 @@
+import { TeamDataService } from '../../services/team-data.service';
 import { Player } from '../../models/player.model';
 import { Team } from '../../models/team.model';
 import { PlayerProfileComponent } from '../player-profile/player-profile.component';
@@ -12,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PlayerComponent implements OnInit {
 
-  @Input() player: Player;
+  @Input() public player: Player;
 
   constructor() { }
 

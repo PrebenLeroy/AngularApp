@@ -1,19 +1,22 @@
-<mat-card>
-    <img id="okapi" src={{team.logoPath}} alt="TeamLogo" />
-    <p class="subtitle">Welcome on this player rating site for Crelan Okapi Aalstar. </p>
-    <mat-nav-list>
-        <mat-list-item routerLink="/team">
-            <mat-icon mat-list-icon>list</mat-icon>
-            <h4 mat-line>Overview of all players of Crelan Okapi Aalstar</h4>
-            <p mat-line> View the profile, or rate a player </p>
-        </mat-list-item>
-    </mat-nav-list>
-</mat-card>
+<div *ngIf="team">
+    <mat-card>
+        <img id="okapi" src={{team.picturePath}} alt="TeamLogo" />
+        <p class="subtitle">Welcome on this player rating site for {{team.name}}. </p>
+        <mat-nav-list>
+            <mat-list-item routerLink="/team">
+                <mat-icon mat-list-icon>list</mat-icon>
+                <h4 mat-line>Overview of all players of Crelan Okapi Aalstar</h4>
+                <p mat-line> View the profile, or rate a player </p>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-card>
 
-<mat-card class="ranked">
-    Highest ranked player: => score: 5/5
-</mat-card>
+    <mat-card class="ranked">
+        Highest ranked player: => score: 5/5
+    </mat-card>
 
-<mat-card class="scored">
-    Most scored player: => score 5/5
-</mat-card>
+    <mat-card class="scored">
+        Most scored player: => score 5/5
+    </mat-card>
+
+</div>

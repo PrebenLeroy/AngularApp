@@ -1,7 +1,7 @@
 <div class="players">
     <mat-card>
-        <img id="player" src="{{player.picturePath}}" alt="{{player.lastname}}"/>
+        <img id="player" src="{{player.picturePath}}" alt="{{player.lastname}}" />
         <h4>{{player.firstname}} {{player.lastname}}</h4>
-        <button mat-raised-button routerlinkActive="active" [routerLink]="['profile', player._id]" value="player">Profile</button>
+        <button mat-raised-button routerlinkActive="active" [routerLink]="['profile', this.player._id]" [value]="this.player">Profile</button>
     </mat-card>
 </div>

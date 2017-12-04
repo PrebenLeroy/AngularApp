@@ -2,31 +2,31 @@ import { Player } from './player.model';
 
 export class Team {
 
-    private _logoPath: String;
+    private _picturePath: String;
     private _name: String;
     private _players: Player[];
     private _coach: String;
-    private _assistantcoach: String;
+    private _assistantCoach: String;
 
-    constructor(logoPath: String, name: String, players: Player[], coach: String, assistantcoach: String){
-        this._logoPath = logoPath;
+    constructor(picturePath: String, name: String, players: Player[], coach: String, assistantCoach: String){
+        this._picturePath = picturePath;
         this._name = name;
         this._players = players;
         this._coach = coach;
-        this._assistantcoach = assistantcoach;
+        this._assistantCoach = assistantCoach;
     }
 
     static fromJSON(json): Team {
-        const team = new Team(json.logoPath, json.name, json.players, json.coach, json.assistentcoach);
+        const team = new Team(json.picturePath, json.name, json.players, json.coach, json.assistantCoach);
         return team;
     }
 
-    get logoPath(){
-        return this._logoPath;
+    get picturePath(){
+        return this._picturePath;
     }
 
-    set logoPath(logoPath: String){
-        this._logoPath = logoPath;
+    set picturePath(picturePath: String){
+        this._picturePath = picturePath;
     }
 
     get name(){
@@ -53,11 +53,11 @@ export class Team {
         this._coach = coach;
     }
 
-    get assistantcoach(){
-        return this._assistantcoach;
+    get assistantCoach(){
+        return this._assistantCoach;
     }
 
-    set assistantcoach(assistantcoach: String){
-        this._assistantcoach = assistantcoach;
+    set assistantCoach(assistantCoach: String){
+        this._assistantCoach = assistantCoach;
     }
 }

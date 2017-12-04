@@ -3,7 +3,7 @@ import { Rating } from './rating.model';
 
 export class Player {
 
-    private _id: string;
+    public _id: string;
     private _picturePath: String;
     private _playernumber: number;
     private _firstname: String;
@@ -23,7 +23,7 @@ export class Player {
     static fromJSON(json): Player {
         const player = new Player(json.picturePath, json.playernumber, json.firstname, json.lastname, json.position);
         player._id = json._id;
-        player._ratings = json.routes.map(Rating.fromJSON);
+        /*player._ratings = json.routes.map(Rating.fromJSON);*/
         return player;
     }
 

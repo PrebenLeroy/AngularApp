@@ -10,9 +10,9 @@ let passport = require('passport');
 mongoose.connect(process.env.PLAYERRATING_DATABASE, { useMongoClient: true });
 
 require('./models/User');
+require('./models/Team');
 require('./models/Player');
 require('./models/Rating');
-require('./models/Team');
 
 require('./config/passport');
 

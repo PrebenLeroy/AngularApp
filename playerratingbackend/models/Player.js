@@ -5,11 +5,11 @@ let PlayerSchema = new mongoose.Schema({
     playerNumber: Number,
     firstname: String,
     lastname: String,
-    position: Number,
-    ratings: [{
+    position: Number
+    /*,ratings: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Rating'
-    }],
+    }],*/
 });
 
 mongoose.model('Player', PlayerSchema);

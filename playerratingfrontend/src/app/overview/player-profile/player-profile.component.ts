@@ -4,25 +4,23 @@ import { Position } from '../../models/position.model';
 import { PlayerRatingComponent } from '../player-rating/player-rating.component';
 
 import { MatDialog } from '@angular/material';
-
-const playerTest: Player = new Player('assets/players/VT-2.jpg', 2, 'Vernon', 'Taylor', Position.SG);
+import { TeamDataService } from '../../services/team-data.service';
 
 @Component({
   selector: 'app-player-profile',
   templateUrl: './player-profile.component.html',
-  styleUrls: ['./player-profile.component.scss']
+  styleUrls: ['./player-profile.component.scss'],
+  providers: [TeamDataService]
 })
 export class PlayerProfileComponent implements OnInit {
 
-player: Player;
-
-  constructor(public dialog: MatDialog) {
-    this.player = playerTest;
+  constructor(private teamDataService: TeamDataService, public dialog: MatDialog) {
   }
 
-  /*@Input() player: Player;*/
+  @Input() public value: Player;
 
   ngOnInit() {
+    console.log(this.value);
   }
 
   openDialog(player: Player) {
