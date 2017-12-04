@@ -23,7 +23,6 @@ export class PlayerProfileComponent implements OnInit {
   ngOnInit() {
     this._route.data.subscribe(item => {
       this.player = item['player'];
-      console.log(this.player);
     });
   }
 
