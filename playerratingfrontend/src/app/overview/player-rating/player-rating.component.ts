@@ -12,11 +12,21 @@ import { Rating } from '../../models/rating.model';
 })
 export class PlayerRatingComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  public rating: FormGroup;
+
+  constructor(public dialog: MatDialog, private fb: FormBuilder) { }
 
   @Input() player: Player;
 
   ngOnInit() {
+    this.rating = this.fb.group({
+      overall: [''],
+      freethrow: [''],
+      rebound: [''],
+      blocks: [''],
+      assist: [''],
+      steals: ['']
+    });
   }
 
   closeDialog(){

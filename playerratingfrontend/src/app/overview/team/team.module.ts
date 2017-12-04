@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     MatButtonModule, MatCardModule, MatMenuModule, MatIconModule, MatToolbarModule,
     MatListModule, MatDialogModule, MatFormFieldModule, MatInputModule
@@ -31,6 +31,7 @@ const routes = [
         HttpModule,
         CommonModule,
         ReactiveFormsModule,
+        FormsModule,
         MatButtonModule,
         MatCardModule,
         MatMenuModule,

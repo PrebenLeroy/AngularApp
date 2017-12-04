@@ -17,6 +17,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { AuthGuardService } from '../overview/user/auth-guard.service';
 import { AuthenticationService } from '../overview/user/authentication.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', canActivate: [AuthGuardService], component: HomeComponent, pathMatch: 'full' },
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    ReactiveFormsModule,
     CommonModule
   ],
   declarations: [

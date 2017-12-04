@@ -1,42 +1,77 @@
 <mat-card>
-  <form class="form-container">
+  <form [formGroup]='rating' class="form-container">
 
     <h3>Rate</h3>
 
     <h4>Player to rate: {{player.firstname}} {{player.lastname}}</h4>
 
     <mat-input-container>
-      <input matInput type="number" id="overall" placeholder="Overall Score" min="0" max="5" step="0.5" required>
+      <input matInput type="number" id="overall" formControlName="overall" placeholder="Overall Score" min="0" max="5" step="0.5" required>
+      <div *ngIf='rating.get("overall").errors?.required && rating.get("overall").touched'>
+        a score is required
+      </div>
+      <div  *ngIf='rating.get("overall").value < 0 && rating.get("overall").touched || rating.get("overall").value > 5 && rating.get("overall").touched' >
+        a score must be between 0 and 5, with step = 0,5
+      </div>
     </mat-input-container>
 
     <mat-input-container>
-      <input matInput type="number" placeholder="Freethrow Value" min="0" max="5" step="0.5" required>
+      <input matInput type="number" id="freethrow" formControlName="freethrow" placeholder="Freethrow Value" min="0" max="5" step="0.5" required>
+      <div *ngIf='rating.get("freethrow").errors?.required && rating.get("freethrow").touched'>
+        a score is required
+      </div>
+      <div  *ngIf='rating.get("freethrow").value < 0 && rating.get("freethrow").touched || rating.get("freethrow").value > 5 && rating.get("freethrow").touched'>
+        a score must be between 0 and 5, with step = 0,5
+      </div>
     </mat-input-container>
 
     <mat-input-container>
-      <input matInput type="number" placeholder="Rebound Value" min="0" max="5" step="0.5" required>
+      <input matInput type="number" id="rebound" formControlName="rebound" placeholder="Rebound Value" min="0" max="5" step="0.5" required>
+      <div *ngIf='rating.get("rebound").errors?.required && rating.get("rebound").touched'>
+        a score is required
+      </div>
+      <div  *ngIf='rating.get("rebound").value < 0 && rating.get("rebound").touched || rating.get("rebound").value > 5 && rating.get("rebound").touched'>
+        a score must be between 0 and 5, with step = 0,5
+      </div>
     </mat-input-container>
 
     <mat-input-container>
-      <input matInput type="number" placeholder="Blocks Value" min="0" max="5" step="0.5" required>
+      <input matInput type="number" id="blocks" formControlName="blocks" placeholder="Blocks Value" min="0" max="5" step="0.5" required>
+      <div *ngIf='rating.get("blocks").errors?.required && rating.get("blocks").touched'>
+        a score is required
+      </div>
+      <div  *ngIf='rating.get("blocks").value < 0 && rating.get("blocks").touched || rating.get("blocks").value > 5 && rating.get("blocks").touched'>
+        a score must be between 0 and 5, with step = 0,5
+      </div>
     </mat-input-container>
 
     <mat-input-container>
-      <input matInput type="number" placeholder="Assist Value" min="0" max="5" step="0.5" required>
+      <input matInput type="number" id="assist" formControlName="assist" placeholder="Assist Value" min="0" max="5" step="0.5" required>
+      <div *ngIf='rating.get("assist").errors?.required && rating.get("assist").touched'>
+        a score is required
+      </div>
+      <div  *ngIf='rating.get("assist").value < 0 && rating.get("assist").touched || rating.get("assist").value > 5 && rating.get("assist").touched'>
+        a score must be between 0 and 5, with step = 0,5
+      </div>
     </mat-input-container>
 
     <mat-input-container>
-      <input matInput type="number" placeholder="Steal Value" min="0" max="5" step="0.5"required>
+      <input matInput type="number" id="steals" formControlName="steals" placeholder="Steal Value" min="0" max="5" step="0.5"required>
+      <div *ngIf='rating.get("steals").errors?.required && rating.get("steals").touched'>
+        a score is required
+      </div>
+      <div  *ngIf='rating.get("steals").value < 0 && rating.get("steals").touched || rating.get("steals").value > 5 && rating.get("steals").touched'>
+        a score must be between 0 and 5, with step = 0,5
+      </div>
     </mat-input-container>
 
     <mat-input-container>
       <textarea matInput placeholder="Add your comment to the player"></textarea>
     </mat-input-container>
 
+    <div class="checkMargin">
+      <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
+      <button type="submit" mat-raised-button color="primary" (click)="closeDialog()">Rate</button>
+    </div>
   </form>
-
-  <div class="checkMargin">
-    <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
-    <button mat-raised-button color="primary" (click)="closeDialog()">Rate</button>
-  </div>
 </mat-card>
