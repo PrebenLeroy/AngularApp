@@ -40,6 +40,14 @@ router.get('/API/player/:player', auth, function(req, res){
   })
 })
 
+router.get('/API/ratings', auth, function(req, res, next){
+  let query = Rating.find().populate();
+  query.exec(function(err, rating){
+    if(err) return next(err);
+    res.json(rating);
+  })
+});
+
 router.param('team', function (req, res, next, id) {
   let query = Team.findById(id);
   query.exec(function (err, team) {

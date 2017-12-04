@@ -7,7 +7,7 @@ export class Rating {
     private _overallIndex: Number;
     private _scoreIndex: Number;
     private _freethrowIndex: Number;
-    private _reboundtIndex: Number;
+    private _reboundIndex: Number;
     private _blockIndex: Number;
     private _assistIndex: Number;
     private _stealIndex: Number;
@@ -19,7 +19,7 @@ export class Rating {
         this._overallIndex = overallIndex;
         this._scoreIndex = scoreIndex;
         this._freethrowIndex = freethrowIndex;
-        this._reboundtIndex = reboundIndex;
+        this._reboundIndex = reboundIndex;
         this._blockIndex = blockIndex;
         this._assistIndex = assistIndex;
         this._stealIndex = stealIndex;
@@ -28,7 +28,7 @@ export class Rating {
     }
 
     static fromJSON(json): Rating {
-        const rating = new Rating(json.overallIndex, json.scoreIndex, json.freethrowIndex, 
+        const rating = new Rating(json.overallIndex, json.scoreIndex, json.freethrowIndex,
             json.reboundIndex, json.blockIndex, json.assistIndex, json.stealIndex);
         rating._comment = json.comment;
         rating._id = json._id;
@@ -60,12 +60,12 @@ export class Rating {
         this._freethrowIndex = freethrowIndex;
     }
 
-    get reboundtIndex() {
-        return this._reboundtIndex;
+    get reboundIndex() {
+        return this._reboundIndex;
     }
 
-    set reboundtIndex(reboundtIndex: Number) {
-        this._reboundtIndex = reboundtIndex;
+    set reboundIndex(reboundIndex: Number) {
+        this._reboundIndex = reboundIndex;
     }
 
     get blockIndex() {

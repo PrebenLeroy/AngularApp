@@ -23,7 +23,7 @@ export class Player {
     static fromJSON(json): Player {
         const player = new Player(json.picturePath, json.playerNumber, json.firstname, json.lastname, json.position);
         player._id = json._id;
-        /*player._ratings = json.routes.map(Rating.fromJSON);*/
+        player._ratings = json.ratings.map(Rating.fromJSON);
         return player;
     }
 
@@ -72,7 +72,7 @@ export class Player {
     }
 
     get ratings(): Rating[]{
-        return this.ratings;
+        return this._ratings;
     }
 
     addRating(rating: Rating) {

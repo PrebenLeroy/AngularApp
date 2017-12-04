@@ -6,12 +6,28 @@ mat-card{
 #player{
     height: 7%;
     width: 7%;
-    display: inline-block;
+    display: inline-table;
 }
 
 .playerInfo{
     display: inline-block;
     padding: 20px;
+}
+
+.ratOfPlayer{
+    width: 45%;
+    margin: 22.5px;
+}
+
+.rates{
+    padding: 25px;
+    border-right: 2px solid blue;
+    display: inline-table;
+}
+
+.comments{
+    padding: 25px;
+    display: inline-table;
 }
 
 .buttons{
