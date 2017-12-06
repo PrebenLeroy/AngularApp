@@ -48,6 +48,22 @@ router.get('/API/ratings', auth, function(req, res, next){
   })
 });
 
+router.post(`/API/ratings`, auth, function(req, res, next){
+  let rating = new Rating(req.body.rating);
+  let player = new Player(req.body.player);
+  rating.isNew = true;
+  player.isNew = false;
+	rating.save(function(err, post){
+    if(err) return next(err);
+    player.ratings.push(rating);
+    player.save(function(err, rec){
+      if(err) return next(err);
+    });
+  });
+  res.json(rating);
+});
+
+
 router.param('team', function (req, res, next, id) {
   let query = Team.findById(id);
   query.exec(function (err, team) {

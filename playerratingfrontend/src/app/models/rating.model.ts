@@ -37,6 +37,21 @@ export class Rating {
         return rating;
     }
 
+    toJSON() {
+        return {
+            _id: this._id,
+            user: this._user,
+            overallIndex: this._overallIndex,
+            scoreIndex: this._scoreIndex,
+            freethrowIndex: this._freethrowIndex,
+            reboundIndex: this._reboundIndex,
+            blockIndex: this._blockIndex,
+            assistIndex: this._assistIndex,
+            stealIndex: this._stealIndex,
+            comment: this._comment
+        };
+    }
+
     get user(){
         return this._user;
     }

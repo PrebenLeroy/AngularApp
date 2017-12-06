@@ -1,5 +1,5 @@
 <mat-card>
-  <form [formGroup]='rating' class="form-container">
+  <form [formGroup]='rating' (ngSubmit)='onSubmit()' class="form-container">
 
     <h3>Rate</h3>
 
@@ -11,6 +11,16 @@
         a score is required
       </div>
       <div  *ngIf='rating.get("overall").value < 0 && rating.get("overall").touched || rating.get("overall").value > 5 && rating.get("overall").touched' >
+        a score must be between 0 and 5, with step = 0,5
+      </div>
+    </mat-input-container>
+
+    <mat-input-container>
+      <input matInput type="number" id="score" formControlName="score" placeholder="Score Value" min="0" max="5" step="0.5"required>
+      <div *ngIf='rating.get("score").errors?.required && rating.get("score").touched'>
+        a score is required
+      </div>
+      <div  *ngIf='rating.get("score").value < 0 && rating.get("score").touched || rating.get("score").value > 5 && rating.get("score").touched'>
         a score must be between 0 and 5, with step = 0,5
       </div>
     </mat-input-container>
@@ -66,12 +76,12 @@
     </mat-input-container>
 
     <mat-input-container>
-      <textarea matInput placeholder="Add your comment to the player"></textarea>
+      <textarea matInput placeholder="Add your comment to the player" id="comment" formControlName="comment"></textarea>
     </mat-input-container>
 
     <div class="checkMargin">
       <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
-      <button type="submit" mat-raised-button color="primary" (click)="closeDialog()">Rate</button>
+      <button type="submit" mat-raised-button color="primary">Rate</button>
     </div>
   </form>
 </mat-card>

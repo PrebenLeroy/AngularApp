@@ -60,12 +60,21 @@ export class AuthenticationService {
 
   checkUserNameAvailability(username: string): Observable<boolean> {
     return this.http.post(`${this._url}/checkusername`, { username: username }).map(res => res.json())
-    .map(item => {
-      if (item.username === 'alreadyexists') {
-        return false;
-      } else {
-        return true;
-      }
-    });
+      .map(item => {
+        if (item.username === 'alreadyexists') {
+          return false;
+        } else {
+          return true;
+        }
+      });
+  }
+
+  getCurrentUser(): String {
+    if (!localStorage.getItem('currentUser')) {
+      return 'No User';
+    }
+    const base64Url = this.token.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64)).username;
   }
 }

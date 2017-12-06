@@ -37,4 +37,10 @@ export class TeamDataService {
       .map(response => response.json()).map(player => Player.fromJSON(player));
   }
 
+  addRating(rating, player): Observable<Rating> {
+    return this.http.post(`${this._appUrl}/ratings`, {rating, player},
+            { headers: new Headers({ Authorization: `Bearer ${this.auth.token}` }) })
+            .map(res => res.json()).map(item => Rating.fromJSON(item));
+  }
+
 }

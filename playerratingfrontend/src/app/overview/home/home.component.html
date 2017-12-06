@@ -1,7 +1,8 @@
 <div *ngIf="team">
     <mat-card>
         <img id="okapi" src={{team.picturePath}} alt="TeamLogo" />
-        <p class="subtitle">Welcome on this player rating site for {{team.name}}. </p>
+        <p class="subtitle">Welcome on this player rating site for {{team.name}},</p>
+        <p class="subtitle">See what people think about one of our players!</p>
         <mat-nav-list>
             <mat-list-item routerLink="/team">
                 <mat-icon mat-list-icon>list</mat-icon>
@@ -10,13 +11,4 @@
             </mat-list-item>
         </mat-nav-list>
     </mat-card>
-
-    <mat-card class="ranked">
-        Highest ranked player: => score: 5/5
-    </mat-card>
-
-    <mat-card class="scored">
-        Most scored player: => score 5/5
-    </mat-card>
-
 </div>
