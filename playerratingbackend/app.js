@@ -1,3 +1,4 @@
+ //start backend via bash runBackend.sh
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,14 +8,14 @@ var bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let passport = require('passport');
 
-mongoose.connect(process.env.PLAYERRATING_DATABASE, { useMongoClient: true });
-
 require('./models/User');
 require('./models/Team');
 require('./models/Player');
 require('./models/Rating');
 
 require('./config/passport');
+
+mongoose.connect(process.env.PLAYERRATING_DATABASE, { useMongoClient: true });
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -36,6 +37,13 @@ app.use(passport.initialize());
 
 app.use('/', index);
 app.use('/API/users', users);
+
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.all('*', (req, res) => {
+    const indexFile = `${path.join(__dirname, 'dist')}/index.html`;
+    res.status(200).sendFile(indexFile);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

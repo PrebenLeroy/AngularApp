@@ -33,9 +33,6 @@ export class PlayerProfileComponent implements OnInit {
 
     playerdialog.componentInstance.player = player;
 
-    playerdialog.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
 
 }

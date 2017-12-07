@@ -1,0 +1,1 @@
+source test-env && npm test
