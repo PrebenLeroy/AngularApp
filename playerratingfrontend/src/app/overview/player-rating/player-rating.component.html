@@ -11,7 +11,7 @@
         a score is required
       </div>
       <div  *ngIf='rating.get("overall").value < 0 && rating.get("overall").touched || rating.get("overall").value > 5 && rating.get("overall").touched' >
-        a score must be between 0 and 5, with step = 0,5
+        a score must be between 0 and 5
       </div>
     </mat-input-container>
 
@@ -21,7 +21,7 @@
         a score is required
       </div>
       <div  *ngIf='rating.get("score").value < 0 && rating.get("score").touched || rating.get("score").value > 5 && rating.get("score").touched'>
-        a score must be between 0 and 5, with step = 0,5
+        a score must be between 0 and 5
       </div>
     </mat-input-container>
 
@@ -31,7 +31,7 @@
         a score is required
       </div>
       <div  *ngIf='rating.get("freethrow").value < 0 && rating.get("freethrow").touched || rating.get("freethrow").value > 5 && rating.get("freethrow").touched'>
-        a score must be between 0 and 5, with step = 0,5
+        a score must be between 0 and 5
       </div>
     </mat-input-container>
 
@@ -41,7 +41,7 @@
         a score is required
       </div>
       <div  *ngIf='rating.get("rebound").value < 0 && rating.get("rebound").touched || rating.get("rebound").value > 5 && rating.get("rebound").touched'>
-        a score must be between 0 and 5, with step = 0,5
+        a score must be between 0 and 5
       </div>
     </mat-input-container>
 
@@ -51,7 +51,7 @@
         a score is required
       </div>
       <div  *ngIf='rating.get("blocks").value < 0 && rating.get("blocks").touched || rating.get("blocks").value > 5 && rating.get("blocks").touched'>
-        a score must be between 0 and 5, with step = 0,5
+        a score must be between 0 and 5
       </div>
     </mat-input-container>
 
@@ -61,7 +61,7 @@
         a score is required
       </div>
       <div  *ngIf='rating.get("assist").value < 0 && rating.get("assist").touched || rating.get("assist").value > 5 && rating.get("assist").touched'>
-        a score must be between 0 and 5, with step = 0,5
+        a score must be between 0 and 5
       </div>
     </mat-input-container>
 
@@ -71,7 +71,7 @@
         a score is required
       </div>
       <div  *ngIf='rating.get("steals").value < 0 && rating.get("steals").touched || rating.get("steals").value > 5 && rating.get("steals").touched'>
-        a score must be between 0 and 5, with step = 0,5
+        a score must be between 0 and 5
       </div>
     </mat-input-container>
 
@@ -81,7 +81,7 @@
 
     <div class="checkMargin">
       <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
-      <button type="submit" mat-raised-button color="primary">Rate</button>
+      <button type="submit" mat-raised-button color="primary" [disabled]="!rating.valid">Rate</button>
     </div>
   </form>
 </mat-card>
