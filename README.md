@@ -17,3 +17,7 @@ Lokaal draaien?
 
 Testing:
   -> run backend met test-db, wanneer backend draait op normale DB, neemt test normale DB. Backend moet draaien met testDB (via test-env)
+  
+      Windows: bash runTest.sh in git bash
+      
+      Unix: npm testUnix
